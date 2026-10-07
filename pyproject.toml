@@ -1,0 +1,26 @@
+[project]
+name = "chatbot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=1.4.3",
+    "langchain-openai>=1.6.7",
+    "langchain-text-splitters>=1.1.3",
+    "pypdf>=6.19.0",
+    "python-dotenv>=1.2.4",
+    "streamlit>=1.65.0",
+]
+
+[project.scripts]
+chatbot = "chatbot:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+# 최상단 app.py를 실행하는 프로젝트이므로 editable 설치를 하지 않습니다.
+# 한글 경로에서 생성되는 .pth 파일의 인코딩 문제도 예방합니다.
+package = false
